@@ -1,0 +1,22 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - serviceaccount.yml
+  - service.yml
+  - statefulset.yml
+
+commonLabels:
+  app.kubernetes.io/component: server
+
+configMapGenerator:
+  - name: mariadb-config
+    files: []
+  - name: mariadb-init
+    files: []
+  - name: mariadb-server
+    literals:
+      - MARIADB_DATABASE=test
+
+...
