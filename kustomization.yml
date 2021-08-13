@@ -10,7 +10,7 @@ commonLabels:
 
 images:
   - name: mariadb-server
-    newName: docker.io/library/mariadb
+    newName: library/mariadb
     newTag: "10"
 
 ...
