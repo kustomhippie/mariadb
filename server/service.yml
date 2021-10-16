@@ -4,8 +4,15 @@ kind: Service
 
 metadata:
   name: mariadb-server
+  labels:
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/component: server
 
 spec:
+  selector:
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/component: server
+
   ports:
     - name: mariadb
       port: 3306
