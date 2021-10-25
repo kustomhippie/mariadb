@@ -26,19 +26,35 @@ configMapGenerator:
         app.kubernetes.io/component: server
     literals:
       - MARIADB_DATABASE=test
+  - name: mariadb-metrics
+    options:
+      labels:
+        app.kubernetes.io/name: mariadb
+        app.kubernetes.io/component: server
+    literals: []
 
 secretGenerator:
   - name: mariadb-admin
     options:
+      disableNameSuffixHash: true
       labels:
         app.kubernetes.io/name: mariadb
         app.kubernetes.io/component: server
     files: []
   - name: mariadb-user
     options:
+      disableNameSuffixHash: true
       labels:
         app.kubernetes.io/name: mariadb
         app.kubernetes.io/component: server
     files: []
+
+images:
+  - name: mariadb-server
+    newName: library/mariadb
+    newTag: "10.6.4"
+  - name: mariadb-metrics
+    newName: prom/mysqld-exporter
+    newTag: "v0.13.0"
 
 ...

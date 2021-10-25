@@ -14,7 +14,9 @@ spec:
     app.kubernetes.io/component: server
 
   ports:
-    - name: mariadb
+    - name: mysql
       port: 3306
+    - name: metrics
+      port: 9104
 
 ...

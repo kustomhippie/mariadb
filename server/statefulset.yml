@@ -59,7 +59,7 @@ spec:
                 name: mariadb-server
 
           ports:
-            - name: mariadb
+            - name: mysql
               containerPort: 3306
 
           livenessProbe:
@@ -79,21 +79,61 @@ spec:
                 - exec mysqladmin status -uroot -p${MARIADB_ROOT_PASSWORD}
 
           volumeMounts:
-            - name: config
-              mountPath: /etc/mysql/conf.d
-            - name: init
-              mountPath: /docker-entrypoint-initdb.d
             - name: data
               mountPath: /var/lib/mysql
+            - name: init
+              mountPath: /docker-entrypoint-initdb.d
+            - name: config
+              mountPath: /etc/mysql/conf.d
+
+        - name: metrics
+          image: mariadb-metrics
+          imagePullPolicy: IfNotPresent
+
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb-admin
+                  key: password
+
+            - name: DATA_SOURCE_NAME
+              value: "root:$(MARIADB_ROOT_PASSWORD)@(localhost:3306)/"
+
+          envFrom:
+            - configMapRef:
+                name: mariadb-metrics
+
+          ports:
+            - name: metrics
+              containerPort: 9104
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: metrics
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: metrics
+
+          resources:
+            limits:
+              cpu: "0.1"
+              memory: "64Mi"
+            requests:
+              cpu: "0.1"
+              memory: "64Mi"
 
       volumes:
-        - name: config
-          configMap:
-            name: mariadb-config
-            defaultMode: 0755
         - name: init
           configMap:
             name: mariadb-init
+            defaultMode: 0755
+        - name: config
+          configMap:
+            name: mariadb-config
             defaultMode: 0755
 
   volumeClaimTemplates:

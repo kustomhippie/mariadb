@@ -5,9 +5,4 @@ kind: Kustomization
 resources:
   - server/
 
-images:
-  - name: mariadb-server
-    newName: library/mariadb
-    newTag: "10"
-
 ...
