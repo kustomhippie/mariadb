@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.0](https://github.com/kustomhippie/mariadb/compare/v1.0.1...v2.0.0) (2023-06-19)
+
 ## [1.0.1](https://github.com/kustomhippie/mariadb/compare/v1.0.0...v1.0.1) (2023-06-12)
 
 ## 1.0.0 (2023-06-05)
