@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0](https://github.com/kustomhippie/mariadb/compare/v2.1.0...v3.0.0) (2023-07-17)
+
+
+### Features
+
+* **major:** update actionhippie/kustomize action to v2 ([9252c3b](https://github.com/kustomhippie/mariadb/commit/9252c3b0b188761b7d4b04f7b2ec316a79544c6d))
+
 ## [2.1.0](https://github.com/kustomhippie/mariadb/compare/v2.0.0...v2.1.0) (2023-07-03)
 
 
