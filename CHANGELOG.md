@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/kustomhippie/mariadb/compare/v3.1.1...v3.2.0) (2023-11-27)
+
+
+### Features
+
+* **deps:** update library/mariadb docker tag to v11.2.2 ([ab16a12](https://github.com/kustomhippie/mariadb/commit/ab16a1205ff357785329d22f372b0e701c7a92c3))
+
 ## [3.1.1](https://github.com/kustomhippie/mariadb/compare/v3.1.0...v3.1.1) (2023-11-20)
 
 
