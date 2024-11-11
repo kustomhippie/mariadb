@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.0](https://github.com/kustomhippie/mariadb/compare/v3.5.0...v3.6.0) (2024-11-11)
+
+
+### Features
+
+* **deps:** update prom/mysqld-exporter docker tag to v0.16.0 ([#25](https://github.com/kustomhippie/mariadb/issues/25)) ([28a3c3c](https://github.com/kustomhippie/mariadb/commit/28a3c3caab00d9706da0c3b1ac99e579b22f9e91))
+
 ## [3.5.0](https://github.com/kustomhippie/mariadb/compare/v3.4.0...v3.5.0) (2024-08-19)
 
 
