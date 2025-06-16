@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.0](https://github.com/kustomhippie/mariadb/compare/v3.9.1...v3.10.0) (2025-06-16)
+
+
+### Features
+
+* **deps:** update mariadb docker tag to v11.8.2 ([#30](https://github.com/kustomhippie/mariadb/issues/30)) ([2b3adb4](https://github.com/kustomhippie/mariadb/commit/2b3adb412fba0ca22002941693ffde134bcfa7ef))
+
 ## [3.9.1](https://github.com/kustomhippie/mariadb/compare/v3.9.0...v3.9.1) (2025-03-10)
 
 
