@@ -52,7 +52,7 @@ secretGenerator:
 images:
   - name: mariadb-server
     newName: library/mariadb
-    newTag: "11.8.3"
+    newTag: "12.0.2"
   - name: mariadb-metrics
     newName: prom/mysqld-exporter
     newTag: "v0.17.2"
